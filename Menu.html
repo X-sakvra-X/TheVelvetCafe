@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Velvet Bean Menu</title>
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #221a0f;
+            color: #b99973;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #b99973;
+            margin: 20px;
+        }
+
+        .menu-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .menu-item {
+            background-color: #3a5e3d;
+            color: #b99973;
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px #e48731(0, 0, 0, 0.3);
+        }
+
+        .menu-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .menu-item p {
+            font-size: 1em;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000(255, 41, 41, 0.397);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #222;
+            color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 500px;
+            text-align: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            color: #e0435d;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #ff4081;
+        }
+    </style>
+</head>
+<body>
+
+<h1><ins>The Velvet Bean Menu</ins></h1>
+
+<div class="menu-section">
+    <div class="menu-item" onclick="openModal('coffee')">
+        <h3>Coffee</h3>
+        <p><em>Our signature smooth blends, perfect for any occasion.</em></p>
+    </div>
+    <div class="menu-item" onclick="openModal('pastries')">
+        <h3>Pastries</h3>
+        <p><em>Freshly baked pastries, perfect with any coffee.</em></p>
+    </div>
+    <div class="menu-item" onclick="openModal('specialties')">
+        <h3>Specialties</h3>
+        <p><em>Unique flavors, crafted to elevate your experience.</em></p>
+    </div>
+    <div class="menu-item" oneclick="openModal('breakfasts')">
+        <h3>Breakfasts</h3>
+        <p><em>Hot n' ready breakfasts, the perfect start to your day.</em></p>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="coffee" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('coffee')">&times;</span>
+        <h2>Coffee</h2>
+        <p>Our signature dark roast, smooth and rich in flavor.</p>
+        <p>Price: $4.00</p>
+    </div>
+</div>
+
+<div id="pastries" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('pastries')">&times;</span>
+        <h2>Pastries</h2>
+        <p>Freshly baked pastries, perfect with any coffee.</p>
+        <p>Price: $2.50</p>
+    </div>
+</div>
+
+<div id="specialty" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('specialties')">&times;</span>
+        <h2>Specialty Drinks</h2>
+        <p>Unique blends, crafted to elevate your experience.</p>
+        <p>Price: $5.00</p>
+    </div>
+</div>
+
+<div id="breakfasts" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('breakfasts')">&times;</span>
+        <h2>Breakfasts</h2>
+        <p>BUNCHA BEAUTIFUL NONSENSE. =D</p>
+        <p>WITH A PRRRICE, OF COURSE. =D</p>
+    </div>
+</div>
+
+<script>
+    function openModal(item) {
+        document.getElementById(item).style.display = 'flex';
+    }
+
+    function closeModal(item) {
+        document.getElementById(item).style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

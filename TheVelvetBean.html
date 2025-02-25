@@ -1,0 +1,212 @@
+<!--The Velvet Bean Website
+    Created by: Blossom Appearance
+    Course: Web Development 10S
+    Teacher: Ms. Hoitink
+    School: Pembina Trails Collegiate (PTC)
+    Date Last Modified: 02.23.25 | 1:35 AM
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Velvet Bean</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+    body {
+        background-color: #221a0f;
+        color: #b99973;
+        font-family: 'Merriweather', serif;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+    }
+    header {
+        text-align: center;
+        padding: 50px 0;
+        font-size: 2.5rem;
+        color: #b99973;
+        background: linear-gradient(135deg, #221a0f, #3e3224);
+        animation: fadeIn 2s ease-in;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .catchphrase {
+        font-size: 1.5rem;
+        font-style: italic;
+        color: #7e705a;
+    }
+    nav {
+        position: sticky;
+        top: 0;
+        background-color: #291f12;
+        padding: 15px 0;
+        text-align: center;
+        z-index: 1000;
+    }
+    nav a {
+        color: #b99973;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: 0.3s;
+    }
+    nav a:hover {
+        background-color: #3a2c1a;
+        border-radius: 5px;
+    }
+    .about {
+        text-align: center;
+        padding: 30px;
+        background-color: #221a0f;
+    }
+    .about p {
+        font-size: 1.2rem;
+    }
+    .menu {
+        text-align: center;
+        padding: 30px;
+        background-color: #291f12;
+    }
+    .menu-item {
+        background: #3a5e3d;
+        padding: 15px;
+        margin: 10px;
+        display: inline-block;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+    }
+    .menu-item:hover {
+        transform: scale(1.1);
+        background-color: #ac5a0e;
+    }
+    .video {
+        text-align: center;
+        margin: 30px 0;
+    }
+    .contact-form {
+        text-align: center;
+        padding: 30px;
+        background-color: #291f12;
+    }
+    input, textarea {
+        width: 80%;
+        max-width: 400px;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+    }
+    button {
+        background: #4e3c23;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+    }
+    button:hover {
+        background: #ac5a0e;
+    }
+    .table-section {
+        text-align: center;
+        padding: 30px;
+        background: #333;
+    }
+    table {
+        width: 60%;
+        margin: auto;
+        border-collapse: collapse;
+        transition: transform 0.3s;
+    }
+    th, td {
+        border: 1px solid #f0f0f0;
+        padding: 10px;
+    }
+    th {
+        background-color: #444;
+    }
+    table:hover {
+        transform: scale(1.02);
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .modal-content {
+        background-color: #222;
+        margin: 10% auto;
+        padding: 20px;
+        width: 50%;
+        text-align: center;
+        border-radius: 10px;
+    }
+    .close {
+        color: #f04957;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <header>
+    <h1>The Velvet Bean</h1>
+<div class="catchphrase">Savor the smoothness, Stay for the warmth</div>
+    </header>
+    <nav>
+    <a href="TheVelvetBean.html">Home</a>
+    <a href="Menu.html">Menus</a>
+    <a href="CustomerFavorites.html">Recommended</a>
+    <a href="Event.html">Events</a>
+    <a href="Blog.html">Blog</a>
+    <a href="VIPOffers.html">V.I.P Offers</a>
+    <a href="OrderOnline.html">Order Online</a>
+    <a href="Contact.html">Contact</a>
+    </nav>
+<section class="about">
+    <h2>About Us</h2>
+    <p><strong>Welcome</strong> to <strong><em>The Velvet Bean</em></strong>, where we serve rich and aromatic coffee in a cozy ambiance. Our café is a place to relax, work, and connect with great company.</p>
+</section>
+<section class="menu">
+    <h2>Today's Specials</h2>
+    <div class="menu-item" onclick="openModal('Caramel Macchiato – A sweet and creamy espresso-based drink, layered with steamed milk, a touch of vanilla syrup, and finished with a rich caramel drizzle.')">Caramel Macchiato - $3.20</div>
+    <div class="menu-item" onclick="openModal('Cheesecake – A rich, creamy dessert with a smooth, velvety filling made from cream cheese, sugar, and eggs, set on a graham cracker or biscuit crust. It’s often topped with fruit, chocolate, or caramel.')">Cheesecake - $4.50</div>
+    <div class="menu-item" onclick="openModal('Cinnamon Raisin Bagel Breakfast Bagel – A toasted cinnamon raisin bagel topped with creamy avocado, scrambled egg, and crispy turkey bacon, blending sweet, savory, and smoky flavors in every bite.')">C.R.B Breakfast Bagel - $5.00</div>
+    </section>
+<section class="video">
+    <h2>Take a look inside our cafe!</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/WdWEMXnHBVI?si=n1lV1Y1ExJay8vvS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</section>
+<section class="contact-form">
+    <h2><ins>Contact Us</ins></h2>
+    <button onclick="openModal('Contact us for reservations and inquiries!')">More Info</button>
+</section>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p id="modal-text"></p>
+    </div>
+</div>
+<script>
+    function openModal(text) {
+        document.getElementById('modal-text').innerText = text;
+        document.getElementById('modal').style.display = 'block';
+    }
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+</script>
+</body>
+</html>
