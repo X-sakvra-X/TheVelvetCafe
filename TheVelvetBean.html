@@ -158,55 +158,90 @@
         font-weight: bold;
         cursor: pointer;
     }
+
+    /* Contact Button Styling */
+    .contact-button {
+        background: #4e3c23;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+    }
+    .contact-button:hover {
+        background: #ac5a0e;
+    }
     </style>
 </head>
 <body>
     <header>
-    <h1>The Velvet Bean</h1>
-<div class="catchphrase">Savor the smoothness, Stay for the warmth</div>
+        <h1>The Velvet Bean</h1>
+        <div class="catchphrase">Savor the smoothness, Stay for the warmth</div>
     </header>
     <nav>
-    <a href="TheVelvetBean.html">Home</a>
-    <a href="Menu.html">Menus</a>
-    <a href="CustomerFavorites.html">Recommended</a>
-    <a href="Event.html">Events</a>
-    <a href="Blog.html">Blog</a>
-    <a href="VIPOffers.html">V.I.P Offers</a>
-    <a href="OrderOnline.html">Order Online</a>
-    <a href="Contact.html">Contact</a>
+        <a href="TheVelvetBean.html">Home</a>
+        <a href="Menu.html">Menus</a>
+        <a href="CustomerFavorites.html">Recommended</a>
+        <a href="Event.html">Events</a>
+        <a href="Blog.html">Blog</a>
+        <a href="VIPOffers.html">V.I.P Offers</a>
+        <a href="OrderOnline.html">Order Online</a>
     </nav>
-<section class="about">
-    <h2>About Us</h2>
-    <p><strong>Welcome</strong> to <strong><em>The Velvet Bean</em></strong>, where we serve rich and aromatic coffee in a cozy ambiance. Our café is a place to relax, work, and connect with great company.</p>
-</section>
-<section class="menu">
-    <h2>Today's Specials</h2>
-    <div class="menu-item" onclick="openModal('Caramel Macchiato – A sweet and creamy espresso-based drink, layered with steamed milk, a touch of vanilla syrup, and finished with a rich caramel drizzle.')">Caramel Macchiato - $3.20</div>
-    <div class="menu-item" onclick="openModal('Cheesecake – A rich, creamy dessert with a smooth, velvety filling made from cream cheese, sugar, and eggs, set on a graham cracker or biscuit crust. It’s often topped with fruit, chocolate, or caramel.')">Cheesecake - $4.50</div>
-    <div class="menu-item" onclick="openModal('Cinnamon Raisin Bagel Breakfast Bagel – A toasted cinnamon raisin bagel topped with creamy avocado, scrambled egg, and crispy turkey bacon, blending sweet, savory, and smoky flavors in every bite.')">C.R.B Breakfast Bagel - $5.00</div>
+    <section class="about">
+        <h2>About Us</h2>
+        <p><strong>Welcome</strong> to <strong><em>The Velvet Bean</em></strong>, where we serve rich and aromatic coffee in a cozy ambiance. Our café is a place to relax, work, and connect with great company.</p>
     </section>
-<section class="video">
-    <h2>Take a look inside our cafe!</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/WdWEMXnHBVI?si=n1lV1Y1ExJay8vvS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</section>
-<section class="contact-form">
-    <h2><ins>Contact Us</ins></h2>
-    <button onclick="openModal('Contact us for reservations and inquiries!')">More Info</button>
-</section>
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <p id="modal-text"></p>
+    <section class="menu">
+        <h2>Today's Specials</h2>
+        <div class="menu-item" onclick="openModal('Caramel Macchiato – A sweet and creamy espresso-based drink, layered with steamed milk, a touch of vanilla syrup, and finished with a rich caramel drizzle.')">Caramel Macchiato - $3.20</div>
+        <div class="menu-item" onclick="openModal('Cheesecake – A rich, creamy dessert with a smooth, velvety filling made from cream cheese, sugar, and eggs, set on a graham cracker or biscuit crust. It’s often topped with fruit, chocolate, or caramel.')">Cheesecake - $4.50</div>
+        <div class="menu-item" onclick="openModal('Cinnamon Raisin Bagel Breakfast Bagel – A toasted cinnamon raisin bagel topped with creamy avocado, scrambled egg, and crispy turkey bacon, blending sweet, savory, and smoky flavors in every bite.')">C.R.B Breakfast Bagel - $5.00</div>
+    </section>
+    <section class="video">
+        <h2>Take a look inside our cafe!</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/WdWEMXnHBVI?si=n1lV1Y1ExJay8vvS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+    <section class="contact-form">
+        <h2><ins>Contact Us</ins></h2>
+        <button class="contact-button" onclick="openModal('Contact us for reservations and inquiries!')">More Info</button>
+    </section>
+
+    <!-- Modal with Sign-Up Form (Contact Only) -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modal-text"></p>
+
+            <!-- Sign-up Form Section (Only in Contact Modal) -->
+            <div id="signup-form" style="display: none;">
+                <h3>Sign Up for Updates</h3>
+                <form id="signUpForm">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+
+                <p>Stay updated on our latest specials, offers, and events!</p>
+            </div>
+        </div>
     </div>
-</div>
-<script>
-    function openModal(text) {
-        document.getElementById('modal-text').innerText = text;
-        document.getElementById('modal').style.display = 'block';
-    }
-    function closeModal() {
-        document.getElementById('modal').style.display = 'none';
-    }
-</script>
+
+    <script>
+        function openModal(text) {
+            document.getElementById('modal-text').innerText = text;
+            document.getElementById('modal').style.display = 'block';
+
+            // Show the sign-up form only in the contact modal
+            if (text === 'Contact us for reservations and inquiries!') {
+                document.getElementById('signup-form').style.display = 'block';
+            } else {
+                document.getElementById('signup-form').style.display = 'none';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>

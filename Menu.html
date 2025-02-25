@@ -59,7 +59,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #000000(255, 41, 41, 0.397);
+            background-color: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
             z-index: 1000;
@@ -81,13 +81,12 @@
         }
 
         .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1.5em;
-            color: #e0435d;
-            cursor: pointer;
-        }
+    color: #f04957;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
         .close:hover {
             color: #ff4081;
@@ -103,17 +102,35 @@
         <h3>Coffee</h3>
         <p><em>Our signature smooth blends, perfect for any occasion.</em></p>
     </div>
+
+        <div class="menu-item" onclick="openModal('tea')">
+            <h3>Tea</h3>
+            <p><em>Our signature smooth blends, perfect for any occasion.</em></p>
+        </div>
+
     <div class="menu-item" onclick="openModal('pastries')">
         <h3>Pastries</h3>
         <p><em>Freshly baked pastries, perfect with any coffee.</em></p>
     </div>
+
     <div class="menu-item" onclick="openModal('specialties')">
         <h3>Specialties</h3>
         <p><em>Unique flavors, crafted to elevate your experience.</em></p>
     </div>
-    <div class="menu-item" oneclick="openModal('breakfasts')">
+
+    <div class="menu-item" onclick="openModal('breakfasts')">
         <h3>Breakfasts</h3>
         <p><em>Hot n' ready breakfasts, the perfect start to your day.</em></p>
+    </div>
+
+    <div class="menu-item" onclick="openModal('lunches')">
+        <h3>Lunches</h3>
+        <p><em>Perfectly balanced lunches, offering a taste of comfort in every bite.</em></p>
+    </div>
+
+    <div class="menu-item" onclick="openModal('seasonals')">
+        <h3>Seasonals</h3>
+        <p><em>Our seasonal specials, perfectly matched to the rhythm of the season.</em></p>
     </div>
 </div>
 
@@ -122,8 +139,13 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal('coffee')">&times;</span>
         <h2>Coffee</h2>
-        <p>Our signature dark roast, smooth and rich in flavor.</p>
-        <p>Price: $4.00</p>
+            <p><strong>Espresso</strong> - Single shot of rich espresso | <em>$2.50</em></p>
+            <p><strong>Americano</strong> - Espresso with hot water | <em>$3.00</em></p>
+            <p><strong>Cappuccino</strong> - Espresso with steamed milk and foam | <em>$4.00</em></p>
+            <p><strong>Latte</strong> - Espresso with steamed milk | <em>$4.50</em></p>
+            <p><strong>Mocha</strong> - Espresso, steamed milk, and chocolate syrup | <em>$5.00</em></p>
+            <p><strong>Iced Coffee</strong> - Chilled brewed coffee served over ice | <em>3.50</em></p>
+            <p><strong>Cold Brew</strong> - Slowly brewed cold coffee, smooth and rich | <em>$4.00</em></p>
     </div>
 </div>
 
@@ -131,12 +153,25 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal('pastries')">&times;</span>
         <h2>Pastries</h2>
-        <p>Freshly baked pastries, perfect with any coffee.</p>
-        <p>Price: $2.50</p>
+        <p><strong>Croissants</strong></p>
+
+            <p><strong>Plain Croissant</strong> - Buttery and flaky | <em>$2.50</em></p>
+            <p><strong>Almond Croissant</strong> - Filled with almond cream | <em>$3.50</em></p>
+            <p><strong>Chocolate Croissant</strong> - Filled with decadent chocolate | <em>$3.67</em></p>
+        <p><strong>Muffins</strong></p>
+            
+            <p><strong>Blueberry Muffin</strong> - Fresh and moist | <em>$3.00</em></p>
+            <p><strong>Banana Nut Muffin</strong> - Sweet with walnuts | <em>$3.22</em></p>
+            <p><strong>Chocolate Chip Muffin</strong> - For the chocolate lovers | <em>$3.45</em></p>
+        <p><strong>Cookies</strong></p>
+            
+            <p><strong>Chocolate Chip</strong> - Classic and gooey | <em>$2.50</em></p>
+            <p><strong>Oatmeal Raisin</strong> - Chewy with a hint of cinnamon | <em>$2.45</em></p>
+            <p><strong>Shortbread</strong> - Light, buttery, and crumbly | <em>$2.67</em></p>
     </div>
 </div>
 
-<div id="specialty" class="modal">
+<div id="specialties" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal('specialties')">&times;</span>
         <h2>Specialty Drinks</h2>
@@ -148,9 +183,36 @@
 <div id="breakfasts" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal('breakfasts')">&times;</span>
-        <h2>Breakfasts</h2>
+        <h2>Breakfast Items</h2>
         <p>BUNCHA BEAUTIFUL NONSENSE. =D</p>
         <p>WITH A PRRRICE, OF COURSE. =D</p>
+    </div>
+</div>
+
+<div id="lunches" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('lunches')">&times;</span>
+        <h2>Lunche Options</h2>
+        <p>HALP MEH!</p>
+        <p>REEEEEEEEEEEEEEEEEEE!!!</p>
+    </div>
+</div>
+
+<div id="tea" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('tea')">&times;</span>
+        <h2>Tea</h2>
+        <p>HALP MEH!</p>
+        <p>REEEEEEEEEEEEEEEEEEE!!!</p>
+    </div>
+</div>
+
+<div id="seasonals" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('seasonals')">&times;</span>
+        <h2>Seasonal Specials</h2>
+        <p>I'm running out of things to say.</p>
+        <p>SAVE DA TART-HOLEEEESSSS!!!</p>
     </div>
 </div>
 
