@@ -3,7 +3,7 @@
     Course: Web Development 10S
     Teacher: Ms. Hoitink
     School: Pembina Trails Collegiate (PTC)
-    Date Last Modified: 02.23.25 | 1:35 AM
+    Date Last Modified: 02.25.25 | 3:00 AM
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -159,7 +159,6 @@
         cursor: pointer;
     }
 
-    /* Contact Button Styling */
     .contact-button {
         background: #4e3c23;
         color: white;
@@ -206,13 +205,13 @@
         <button class="contact-button" onclick="openModal('Contact us for reservations and inquiries!')">More Info</button>
     </section>
 
-    <!-- Modal with Sign-Up Form (Contact Only) -->
+    <!-- Modal with Sign-Up Form -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <p id="modal-text"></p>
 
-            <!-- Sign-up Form Section (Only in Contact Modal) -->
+            <!-- Sign-up Form Section -->
             <div id="signup-form" style="display: none;">
                 <h3>Sign Up for Updates</h3>
                 <form id="signUpForm">
@@ -230,8 +229,7 @@
         function openModal(text) {
             document.getElementById('modal-text').innerText = text;
             document.getElementById('modal').style.display = 'block';
-
-            // Show the sign-up form only in the contact modal
+l
             if (text === 'Contact us for reservations and inquiries!') {
                 document.getElementById('signup-form').style.display = 'block';
             } else {
